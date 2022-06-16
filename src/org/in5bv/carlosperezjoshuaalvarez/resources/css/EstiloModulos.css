@@ -1,0 +1,53 @@
+/* 
+ * @author Carlos Emmanuel Pérez Simón      2021299
+ *         Joshua David Alvarez Calderon    2021317
+ * @date 29/04/2022
+ * @time 15:42:39
+ *
+ * Codigo Tecnico: IN5BV
+*/
+
+.anchor-pane{
+    -fx-background-color: #F9FCFF;
+}
+
+.modulos{
+    -fx-background-color: #01080F ;
+    -fx-background-color: linear-gradient(to bottom, #01080F,#192E33);
+}
+
+.botones-modulos{
+    -fx-background-color: #8ED9FF;
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5 5 5 5;
+}
+
+.pane-imagen{
+    -fx-background-color: #8ED9FF ;
+    -fx-background-radius: 5 5 5 5;
+}
+
+#alumnos{
+    -fx-background-color: #8ED9FF ; 
+    -fx-text-fill: #000000;
+    -fx-font-size: 18px;
+    /*-fx-font-weight: bold;*/
+}
+
+#vbox-modulos{
+    -fx-background-color: #01080F;
+    -fx-background-color: linear-gradient(to bottom, #0B181F,#192E33);
+    
+}
+.tabla{
+    -fx-background-color: #8ED9FF;
+}
+.decoracion{
+    -fx-background-color: #E7E7E7;
+}
+.columnas{
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial Narrow";
+}

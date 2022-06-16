@@ -1,0 +1,36 @@
+/* 
+ *
+ * @author Carlos Emmanuel Pérez Simón      2021299
+ *         Joshua David Alvarez Calderon    2021317
+ * @date 29/04/2022
+ * @time 15:42:39
+ *
+ * Codigo Tecnico: IN5BV
+ *
+*/
+#menu-bar{
+    -fx-background-color: linear-gradient(to bottom, #FFFFFF,#F3F3F3);
+    -fx-background-radius: 10 10 10 10;
+    -fx-font-size: 16px;
+}
+
+.anchor-pane{
+    -fx-background-color: #59767D;
+}
+
+.modulos{
+    -fx-background-color: #E8FFF8;
+}
+
+#menu-modulos:hover{
+    -fx-background-color: #E8FFF8;
+    -fx-text-fill: #000000;
+}
+
+#menu-ayuda:hover{
+    -fx-background-color: #E8FFF8;
+    -fx-text-fill: #000000;
+}
+.menu-bar .menu-button .label:hover{
+    -fx-text-fill: black;
+}

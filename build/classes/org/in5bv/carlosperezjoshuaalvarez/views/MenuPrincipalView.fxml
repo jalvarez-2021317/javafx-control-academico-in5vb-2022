@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane prefHeight="660.0" prefWidth="1189.0" styleClass="anchor-pane" stylesheets="@../resources/css/EstiloMenuPrincipal.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.in5bv.carlosperezjoshuaalvarez.controllers.MenuPrincipalController">
+   <children>
+      <Circle fill="#1b1721" layoutX="91.0" layoutY="411.0" radius="56.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#1b1721" layoutX="167.0" layoutY="513.0" radius="111.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#1b1721" layoutX="1061.0" layoutY="111.0" radius="75.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#1b1721" layoutX="1103.0" layoutY="178.0" radius="49.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#1b1721" layoutX="1001.0" layoutY="138.0" radius="75.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#1b1721" layoutX="1088.0" layoutY="540.0" radius="56.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#1b1721" layoutX="66.0" layoutY="129.0" radius="28.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#1b1721" layoutX="1116.0" layoutY="596.0" radius="28.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#1b1721" layoutX="1015.0" layoutY="586.0" radius="46.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#1b1721" layoutX="56.0" layoutY="606.0" radius="18.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <MenuBar id="menu-bar" layoutX="35.0" layoutY="36.0" prefHeight="37.0" prefWidth="150.0">
+        <menus>
+          <Menu id="menu-modulos" mnemonicParsing="false" text="Modulos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#clicAlumnos" styleClass="modulos" text="Alumnos" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicSalones" styleClass="modulos" text="Salones" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicCarrerasTecnicas" styleClass="modulos" text="Carreras Técnicas" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicHorarios" styleClass="modulos" text="Horarios" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicAsignacionesAlumnos" styleClass="modulos" text="Asignaciones Alumnos" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicCursos" styleClass="modulos" text="Cursos" />
+                  <MenuItem mnemonicParsing="false" styleClass="modulos" text="Instructores" />
+            </items>
+          </Menu>
+          <Menu id="menu-ayuda" mnemonicParsing="false" text="?">
+            <items>
+              <MenuItem mnemonicParsing="false" styleClass="ayuda" text="Acerca de..." />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView fitHeight="478.0" fitWidth="500.0" layoutX="361.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/Control%20Academico.png" />
+         </image></ImageView>
+      <Pane layoutX="22.0" layoutY="20.0" prefHeight="10.0" prefWidth="1157.0" style="-fx-background-color: #1B1721;" />
+      <Pane layoutX="22.0" layoutY="632.0" prefHeight="10.0" prefWidth="1157.0" style="-fx-background-color: #1B1721;" />
+      <Circle fill="#1b1721" layoutX="147.0" layoutY="170.0" radius="75.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#1b1721" layoutX="222.0" layoutY="119.0" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#1b1721" layoutX="246.0" layoutY="156.0" radius="13.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
