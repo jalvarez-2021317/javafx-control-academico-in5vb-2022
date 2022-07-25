@@ -46,7 +46,7 @@ public class HorariosController implements Initializable {
     public void setEscenarioPrincipal(Principal escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
-
+   
 
     private enum Operacion {
         NINGUNO, GUARDAR, ACTUALIZAR

@@ -17,7 +17,7 @@ import javafx.beans.property.StringProperty;
 public class AsignacionesAlumnos {
 
     private IntegerProperty id;
-    private StringProperty alumnoId; 
+    private StringProperty alumnoId;
     private IntegerProperty cursoId;
     private ObjectProperty<LocalDateTime> fechaAsignacion;
 
@@ -28,13 +28,12 @@ public class AsignacionesAlumnos {
         this.fechaAsignacion = new SimpleObjectProperty<>();
     }
 
-    
     public AsignacionesAlumnos(String alumnoId, int cursoId, LocalDateTime fechaAsignacion) {
         this.alumnoId = new SimpleStringProperty(alumnoId);
         this.cursoId = new SimpleIntegerProperty(cursoId);
         this.fechaAsignacion = new SimpleObjectProperty<>(fechaAsignacion);
     }
-    
+
     public AsignacionesAlumnos(int id, String alumnoId, int cursoId, LocalDateTime fechaAsignacion) {
         this.id = new SimpleIntegerProperty(id);
         this.alumnoId = new SimpleStringProperty(alumnoId);

@@ -165,7 +165,7 @@ public class Cursos {
 
     @Override
     public String toString() {
-        return "Cursos{" + "id=" + id + ", nombreCurso=" + nombreCurso + ", ciclo=" + ciclo + ", cupoMaximo=" + cupoMaximo + ", cupoMinimo=" + cupoMinimo + ", carreraTecnicaId=" + carreraTecnicaId + ", horarioId=" + horarioId + ", instructorId=" + instructorId + ", salonId=" + salonId + '}';
+        return id + "|" + nombreCurso + "|" + ciclo + "|" + cupoMaximo + "|" + cupoMinimo + "|" + carreraTecnicaId + "|" + horarioId + "|" + instructorId + "|" + salonId ;
     }
     
     

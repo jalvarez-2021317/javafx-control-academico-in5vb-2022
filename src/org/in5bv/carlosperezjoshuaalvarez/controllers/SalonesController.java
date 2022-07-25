@@ -18,6 +18,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javafx.collections.FXCollections;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -25,6 +27,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.in5bv.carlosperezjoshuaalvarez.db.Conexion;
+import org.in5bv.carlosperezjoshuaalvarez.reports.GenerarReporte;
 
 /**
  *
@@ -525,13 +528,9 @@ public class SalonesController implements Initializable {
 
     @FXML
     private void clicReporte() {
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setTitle("Hola mundo");
-        alerta.setHeaderText(null);
-        alerta.setContentText("Esta funcion solo esta disponible en el nuevo mundo");
-        Stage stageAlert = (Stage) alerta.getDialogPane().getScene().getWindow();
-        stageAlert.getIcons().add(new Image(PAQUETE_IMAGES + "alerta.png"));
-        alerta.show();
+        Map<String, Object> parametros = new HashMap<>();
+        parametros.put("SALUDO", PAQUETE_IMAGES + "salon-de-clases.png");
+        GenerarReporte.getInstance().mostrarReporte("ReporteSalones.jasper",parametros, "Reporte Salones");
     }
 
     @FXML

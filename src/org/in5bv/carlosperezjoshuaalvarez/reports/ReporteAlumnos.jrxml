@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Plantilla1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ab4261b6-c58f-4c1f-9167-1c0e4e2a7d7f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="db_control_academico_in5bv"/>
+	<subDataset name="Empty Dataset1" uuid="dbf938b8-1cdb-46ab-b13c-8177dd5d6383"/>
+	<parameter name="LOGO_HEADER" class="java.lang.String"/>
+	<parameter name="LOGO_FOOTER" class="java.lang.String"/>
+	<parameter name="SALUDO" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[CALL sp_alumnos_report()]]>
+	</queryString>
+	<field name="carne" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="carne"/>
+		<property name="com.jaspersoft.studio.field.label" value="carne"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+	</field>
+	<field name="nombre_completo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre_completo"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_completo"/>
+	</field>
+	<variable name="carne1" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{carne}]]></variableExpression>
+	</variable>
+	<variable name="carne2" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{carne}]]></variableExpression>
+	</variable>
+	<variable name="nombre_completo1" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{nombre_completo}]]></variableExpression>
+	</variable>
+	<variable name="carne3" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{carne}]]></variableExpression>
+	</variable>
+	<variable name="nombre_completo2" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{nombre_completo}]]></variableExpression>
+	</variable>
+	<variable name="carne4" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{carne}]]></variableExpression>
+	</variable>
+	<variable name="nombre_completo3" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{nombre_completo}]]></variableExpression>
+	</variable>
+	<variable name="carne5" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{carne}]]></variableExpression>
+	</variable>
+	<variable name="nombre_completo4" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{nombre_completo}]]></variableExpression>
+	</variable>
+	<variable name="nombre_completo5" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{nombre_completo}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="170" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="0" width="349" height="39" forecolor="#2E0A08" uuid="0a42749d-00e7-454e-8f18-39861a54ea5d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="29" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Control Academico Kinal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="39" width="349" height="30" uuid="1d85970d-c85c-427a-975c-cac07accd3ca"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Colonia landivar zona 51]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="100" width="348" height="30" forecolor="#591615" uuid="b4559ecf-3498-4ffb-a0e5-4c522d5e2aba"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefono : 59757560]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="70" width="348" height="30" uuid="104d23f3-5617-45dd-b768-5cf4c1fd4e30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nit : 1112312312]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="10" width="110" height="120" uuid="a9999c91-09e0-4ec2-bb39-2ed5e05405c4"/>
+				<imageExpression><![CDATA[$P{LOGO_HEADER}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="120" width="569" height="50" forecolor="#521110" uuid="0eb44b4b-b72a-4883-bd7e-86fa30dd0898"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Alumnos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="450" y="10" width="92" height="110" uuid="38a25434-c6d1-4744-a98d-7e1fce1914c7"/>
+				<imageExpression><![CDATA[$P{SALUDO}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="0" width="100" height="30" uuid="0af483b4-f9af-424a-bb9b-2af4aa03e40a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<text><![CDATA[Carne]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="2" width="110" height="30" uuid="d7371323-c19a-4038-a0d9-8f5400fb001b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<text><![CDATA[Nombre Completo]]></text>
+			</staticText>
+			<rectangle radius="4">
+				<reportElement x="0" y="50" width="551" height="10" backcolor="#78271A" uuid="7cc982af-aac7-4a46-82bc-41ec66ad9a08"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="57">
+			<textField>
+				<reportElement x="40" y="10" width="100" height="30" uuid="51a68fa7-0932-4a21-b368-cedf83b4cbcd"/>
+				<textFieldExpression><![CDATA[$F{carne}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="13" width="270" height="30" uuid="4e46b4b6-bd1f-4219-9774-acbca2ca136a"/>
+				<textFieldExpression><![CDATA[$F{nombre_completo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="29" width="170" height="30" uuid="4588264f-7929-4b4d-a003-828f740e8e43"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Jalvarez-2021317@kinal.edu.gt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="40" width="100" height="30" uuid="c7f7b96f-c94f-4594-ae75-62429725bb67"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[IN5BV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="20" width="163" height="30" uuid="28dcf721-d063-444e-8137-6c0a106c4460"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Joshua David Alvarez Calderon]]></text>
+			</staticText>
+			<image>
+				<reportElement x="30" y="20" width="100" height="70" uuid="b1669ef3-1c47-4bd1-8608-9a11de59dafb"/>
+				<imageExpression><![CDATA[$P{LOGO_FOOTER}]]></imageExpression>
+			</image>
+			<rectangle radius="4">
+				<reportElement x="2" y="10" width="551" height="10" backcolor="#78271A" uuid="35e3d8a6-a840-4908-91a4-1e157bf6d664"/>
+			</rectangle>
+		</band>
+	</pageFooter>
+</jasperReport>

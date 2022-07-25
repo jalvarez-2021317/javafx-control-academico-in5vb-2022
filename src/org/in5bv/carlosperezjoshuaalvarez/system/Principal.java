@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import org.in5bv.carlosperezjoshuaalvarez.controllers.AcercadeController;
 import org.in5bv.carlosperezjoshuaalvarez.controllers.AlumnosController;
 import org.in5bv.carlosperezjoshuaalvarez.controllers.CarrerasTecnicasController;
 import org.in5bv.carlosperezjoshuaalvarez.controllers.CursosController;
@@ -21,6 +22,7 @@ import org.in5bv.carlosperezjoshuaalvarez.controllers.MenuPrincipalController;
 import org.in5bv.carlosperezjoshuaalvarez.controllers.SalonesController;
 import org.in5bv.carlosperezjoshuaalvarez.controllers.AsignacionesAlumnosController;
 import org.in5bv.carlosperezjoshuaalvarez.controllers.HorariosController;
+import org.in5bv.carlosperezjoshuaalvarez.controllers.LoginController;
 /**
  *
  * @author Carlos Emmanuel Pérez Simón      2021299
@@ -48,11 +50,7 @@ public class Principal extends Application{
         this.escenarioPrincipal.getIcons().add(new Image(PAQUETE_IMAGES + "pila-de-libros.png"));
         this.escenarioPrincipal.setResizable(false);
         this.escenarioPrincipal.centerOnScreen();
-        
-        
-        
-        mostrarEscenaPrincipal();
-        
+        mostrarEscenaLogin();
         /*
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Hola mundo");
@@ -114,7 +112,7 @@ public class Principal extends Application{
             AsignacionesAlumnosController asignacionesAlumnosController = (AsignacionesAlumnosController)cambiarEscena("AsignacionesAlumnosView.fxml",1200,660);
             asignacionesAlumnosController.setEscenarioPrincipal(this);
         }catch(Exception ex){
-            System.out.println("\nSe produjo un error al intentar mostrar la vista Carreras Tecnicas");
+            System.out.println("\nSe produjo un error al intentar mostrar la vista Asignaciones");
             ex.printStackTrace();
         }
     }
@@ -138,6 +136,30 @@ public class Principal extends Application{
             
             //para mostrar todos los errores
             //ex.printStackTrace();
+        }
+    }
+    
+    public void mostrarEscenaLogin(){
+       try{
+           LoginController loginController = (LoginController) cambiarEscena("LoginView.fxml", 385, 500);
+           loginController.setEscenarioPrincipal(this);
+           
+       }catch(Exception ex){
+           System.err.println("Se produjo un error al cargar la vista Login");
+           ex.printStackTrace();
+       }
+    }
+    
+    
+    
+    public void mostrarEscenaAcercade(){
+        try{
+            AcercadeController acercade = (AcercadeController)cambiarEscena("AcercadeView.fxml",900,900);
+            acercade.setEscenarioPrincipal(this);
+        }catch(Exception ex){
+            System.out.println("\nSe produjo un error al intentar mostrar la vista de Acerca de");
+            ex.printStackTrace();
+            
         }
     }
     /*

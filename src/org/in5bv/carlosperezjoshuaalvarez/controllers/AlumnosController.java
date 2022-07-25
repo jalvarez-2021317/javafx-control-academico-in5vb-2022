@@ -18,6 +18,8 @@ import java.sql.PreparedStatement;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,6 +28,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import org.in5bv.carlosperezjoshuaalvarez.db.Conexion;
 import org.in5bv.carlosperezjoshuaalvarez.models.Alumnos;
+import org.in5bv.carlosperezjoshuaalvarez.reports.GenerarReporte;
+import java.io.InputStream;
 
 /**
  *
@@ -543,13 +547,17 @@ public class AlumnosController implements Initializable {
 
     @FXML
     private void clicReporte() {
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        /*Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Hola mundo");
         alerta.setHeaderText(null);
         alerta.setContentText("Esta funcion solo esta disponible en el nuevo mundo");
         Stage stageAlert = (Stage) alerta.getDialogPane().getScene().getWindow();
         stageAlert.getIcons().add(new Image(PAQUETE_IMAGES + "alerta.png"));
-        alerta.show();
+        alerta.show();(*/
+        
+        Map<String, Object> parametros = new HashMap<>();
+        parametros.put("SALUDO", PAQUETE_IMAGES + "estudiantes.png");
+        GenerarReporte.getInstance().mostrarReporte("ReporteAlumnos.jasper",parametros, "Reporte Alumnos");
     }
 
     @FXML

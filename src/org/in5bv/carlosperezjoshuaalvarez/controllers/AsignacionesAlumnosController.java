@@ -8,6 +8,8 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -34,6 +36,7 @@ import org.in5bv.carlosperezjoshuaalvarez.db.Conexion;
 import org.in5bv.carlosperezjoshuaalvarez.models.Alumnos;
 import org.in5bv.carlosperezjoshuaalvarez.models.AsignacionesAlumnos;
 import org.in5bv.carlosperezjoshuaalvarez.models.Cursos;
+import org.in5bv.carlosperezjoshuaalvarez.reports.GenerarReporte;
 import org.in5bv.carlosperezjoshuaalvarez.system.Principal;
 
 /**
@@ -118,17 +121,14 @@ public class AsignacionesAlumnosController implements Initializable {
         txtId.setEditable(false);
         cmbCurso.setEditable(false);
         cmbAlumno.setEditable(false);
-        dpkFechaAsignacion.setEditable(false);
 
         txtId.setDisable(true);
         cmbCurso.setDisable(true);
         cmbAlumno.setDisable(true);
-        dpkFechaAsignacion.setDisable(true);
     }
 
     private void habilitarCampos() {
-        txtId.setEditable(true);        
-        dpkFechaAsignacion.setEditable(true);
+        txtId.setEditable(true);
 
         txtId.setDisable(false);
         cmbCurso.setDisable(false);
@@ -155,7 +155,7 @@ public class AsignacionesAlumnosController implements Initializable {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                // Opción 1:
+                /* Opción 1:
                 Alumnos alumno = new Alumnos();
                 alumno.setCarne(rs.getString(1));
                 alumno.setNombre1(rs.getString(2));
@@ -164,7 +164,7 @@ public class AsignacionesAlumnosController implements Initializable {
                 alumno.setApellido1(rs.getString(5));
                 alumno.setApellido2(rs.getString(6));
 
-                /*
+               */
                 // Opción 2:
                 Alumnos alumno = new Alumnos(
                         rs.getString("carne"),
@@ -174,7 +174,7 @@ public class AsignacionesAlumnosController implements Initializable {
                         rs.getString("apellido1"),
                         rs.getString("apellido2")
                 );
-                 */
+                 
                 System.out.println(alumno.toString());
                 arrayListAlumnos.add(alumno);
             }
@@ -182,7 +182,7 @@ public class AsignacionesAlumnosController implements Initializable {
             listaObservableAlumnos = FXCollections.observableArrayList(arrayListAlumnos);
 
         } catch (SQLException e) {
-            System.err.println("\nSe produjo un error al intentar listar la tabla de Alumnos");
+            System.err.println("\nSe produjo un error al intentar listar la tabla de gAlumnos");
             System.err.println("Message: " + e.getMessage());
             System.err.println("Error code: " + e.getErrorCode());
             System.err.println("SQLState: " + e.getSQLState());
@@ -234,7 +234,7 @@ public class AsignacionesAlumnosController implements Initializable {
             }
 
         } catch (SQLException e) {
-            System.err.println("\nSe produjo un error al intentar listar la tabla de Alumnos");
+            System.err.println("\nSe produjo un error al intentar buscar la tabla Alumnos");
             System.err.println("Message: " + e.getMessage());
             System.err.println("Error code: " + e.getErrorCode());
             System.err.println("SQLState: " + e.getSQLState());
@@ -289,7 +289,7 @@ public class AsignacionesAlumnosController implements Initializable {
             listaObservableCursos = FXCollections.observableArrayList(arrayListCursos);
 
         } catch (SQLException e) {
-            System.err.println("\nSe produjo un error al intentar listar la tabla de Alumnos");
+            System.err.println("\nSe produjo un error al intentar listar la tabla de Cursos");
             System.err.println("Message: " + e.getMessage());
             System.err.println("Error code: " + e.getErrorCode());
             System.err.println("SQLState: " + e.getSQLState());
@@ -331,20 +331,20 @@ public class AsignacionesAlumnosController implements Initializable {
             while (rs.next()) {
                 curso = new Cursos();
                 curso.setNombreCurso(rs.getString("nombre_curso"));
-                curso.setCiclo(rs.getInt("ciclo"));
-                curso.setCupoMaximo(rs.getInt("cupo_maximo"));
-                curso.setCupoMinimo(rs.getInt("cupo_minimo"));
-                curso.setCarreraTecnicaId(rs.getString("carrera_tecnica_id"));
-                curso.setHorarioId(rs.getInt("horario_id"));
-                curso.setIntructorId(rs.getInt("instructor_id"));
-                curso.setSalonId(rs.getString("salon_id"));
+                //curso.setCiclo(rs.getInt("ciclo"));
+                //curso.setCupoMaximo(rs.getInt("cupo_maximo"));
+                //curso.setCupoMinimo(rs.getInt("cupo_minimo"));
+                //curso.setCarreraTecnicaId(rs.getString("carrera_tecnica_id"));
+                //curso.setHorarioId(rs.getInt("horario_id"));
+                //curso.setIntructorId(rs.getInt("instructor_id"));
+                //curso.setSalonId(rs.getString("salon_id"));
 
                 System.out.println(curso.toString());
 
             }
 
         } catch (SQLException e) {
-            System.err.println("\nSe produjo un error al intentar listar la tabla de Alumnos");
+            System.err.println("\nSe produjo un error al intentar listar la tabla de cursos");
             System.err.println("Message: " + e.getMessage());
             System.err.println("Error code: " + e.getErrorCode());
             System.err.println("SQLState: " + e.getSQLState());
@@ -762,13 +762,18 @@ public class AsignacionesAlumnosController implements Initializable {
 
     @FXML
     private void clicReporte(ActionEvent event) {
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        /*Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Advertencia!!!");
         alerta.setHeaderText(null);
         alerta.setContentText("Esta Funcion solo esta disponible en Premium");
         Stage stageAlert = (Stage) alerta.getDialogPane().getScene().getWindow();
         stageAlert.getIcons().add(new Image(PAQUETE_IMAGES + "alerta.png"));
-        alerta.show();
+        alerta.show();*/
+        
+        
+        Map<String, Object> parametros = new HashMap<>();
+        
+        GenerarReporte.getInstance().mostrarReporte("ReporteAsignacionesAlumnos.jasper",parametros, "Reporte Asignaciones ");
     }
 
 }

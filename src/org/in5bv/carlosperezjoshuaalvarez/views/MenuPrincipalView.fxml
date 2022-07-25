@@ -21,7 +21,7 @@
       <Circle fill="#1b1721" layoutX="1116.0" layoutY="596.0" radius="28.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <Circle fill="#1b1721" layoutX="1015.0" layoutY="586.0" radius="46.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <Circle fill="#1b1721" layoutX="56.0" layoutY="606.0" radius="18.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <MenuBar id="menu-bar" layoutX="35.0" layoutY="36.0" prefHeight="37.0" prefWidth="150.0">
+      <MenuBar id="menu-bar" layoutX="31.0" layoutY="36.0" prefHeight="37.0" prefWidth="232.0">
         <menus>
           <Menu id="menu-modulos" mnemonicParsing="false" text="Modulos">
             <items>
@@ -34,11 +34,19 @@
                   <MenuItem mnemonicParsing="false" styleClass="modulos" text="Instructores" />
             </items>
           </Menu>
-          <Menu id="menu-ayuda" mnemonicParsing="false" text="?">
-            <items>
-              <MenuItem mnemonicParsing="false" styleClass="ayuda" text="Acerca de..." />
-            </items>
-          </Menu>
+            <Menu mnemonicParsing="false" text="Reportes">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#clickReporteAlumnos" text="Alumnos" />
+                <MenuItem mnemonicParsing="false" onAction="#clicReporteInstructores" text="Instructores" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicReporteCarreras" text="Carreras Tecnicas" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicReporteHorarios" text="Horarios" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicReporteCursos" text="Cursos" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicReporteCursosPorId" text="Cursos Por Id" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicReporteAsignaciones" text="Asignaciones Alumnos" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicReporteAsiganacionesPorId" text="Asignaciones Por Id" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicReporteSalones" text="Salones" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
       <ImageView fitHeight="478.0" fitWidth="500.0" layoutX="361.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
@@ -50,5 +58,23 @@
       <Circle fill="#1b1721" layoutX="147.0" layoutY="170.0" radius="75.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <Circle fill="#1b1721" layoutX="222.0" layoutY="119.0" radius="37.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <Circle fill="#1b1721" layoutX="246.0" layoutY="156.0" radius="13.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <MenuBar layoutX="1083.0" layoutY="29.0" prefHeight="27.0" prefWidth="56.0">
+        <menus>
+          <Menu mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="41.0">
+                     <image>
+                        <Image url="@../resources/images/apagado.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#clicAcercade" styleClass="ayuda" text="Acerca de..." />
+                  <MenuItem mnemonicParsing="false" onAction="#clicCerrarSesion" styleClass="ayuda" text="cerrar sesion" />
+                  <MenuItem mnemonicParsing="false" onAction="#clicCerrar" styleClass="ayuda" text="Salir" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>

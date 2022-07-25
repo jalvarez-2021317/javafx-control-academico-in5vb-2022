@@ -33,8 +33,8 @@ public class Conexion {
         return instancia;
     }
     
-    private Conexion(){
-        URL = "jdbc:mysql://"+ IP_SERVER +":"+ PORT +"/" + DB;
+    public Conexion(){
+        URL = "jdbc:mysql://"+ IP_SERVER +":"+ PORT +"/" + DB + "?allowPublicKeyRetrieval=true&serverTimezone=UTC&useSSL=false";
         
         try{
             //Class.forName("com.mysql.jdbc.Driver").newInstance();

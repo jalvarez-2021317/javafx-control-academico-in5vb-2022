@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Plantilla1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ab4261b6-c58f-4c1f-9167-1c0e4e2a7d7f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="db_control_academico_in5bv"/>
+	<parameter name="LOGO_HEADER" class="java.lang.String"/>
+	<parameter name="LOGO_FOOTER" class="java.lang.String"/>
+	<parameter name="SALUDO" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[CALL sp_alumnos_report();]]>
+	</queryString>
+	<field name="carne" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="carne"/>
+		<property name="com.jaspersoft.studio.field.label" value="carne"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+	</field>
+	<field name="nombre_completo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre_completo"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_completo"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="130" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="0" width="349" height="39" forecolor="#2E0A08" uuid="0a42749d-00e7-454e-8f18-39861a54ea5d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="29" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Control Academico Kinal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="39" width="349" height="30" uuid="1d85970d-c85c-427a-975c-cac07accd3ca"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Colonia landivar zona 51]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="100" width="348" height="30" forecolor="#591615" uuid="b4559ecf-3498-4ffb-a0e5-4c522d5e2aba"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefono : 59757560]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="70" width="348" height="30" uuid="104d23f3-5617-45dd-b768-5cf4c1fd4e30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nit : 1112312312]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="20" width="100" height="110" uuid="a9999c91-09e0-4ec2-bb39-2ed5e05405c4"/>
+				<imageExpression><![CDATA[$P{LOGO_HEADER}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="518" y="64" width="50" height="50" uuid="bd792da0-1ea3-4ce3-a89c-c381f6b9f498"/>
+				<imageExpression><![CDATA[$P{SALUDO}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="569" height="50" forecolor="#521110" uuid="0eb44b4b-b72a-4883-bd7e-86fa30dd0898"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Entidad]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="69" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement x="189" y="25" width="163" height="30" uuid="28dcf721-d063-444e-8137-6c0a106c4460"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Joshua David Alvarez Calderon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="40" width="170" height="30" uuid="4588264f-7929-4b4d-a003-828f740e8e43"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Jalvarez-2021317@kinal.edu.gt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="50" width="100" height="30" uuid="c7f7b96f-c94f-4594-ae75-62429725bb67"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[IN5BV]]></text>
+			</staticText>
+			<image>
+				<reportElement x="20" y="10" width="100" height="70" uuid="b1669ef3-1c47-4bd1-8608-9a11de59dafb"/>
+				<imageExpression><![CDATA[$P{LOGO_FOOTER}]]></imageExpression>
+			</image>
+		</band>
+	</summary>
+</jasperReport>
